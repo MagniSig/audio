@@ -1,6 +1,6 @@
 {
 	"name" : "common.audio",
-	"version" : "0.0.1",
+	"version" : "0.1.0",
 	"author": "makesites",
 	"description" : "Common methods usind the Web Audio API",
 	"homepage" : "https://github.com/commons/audio",
