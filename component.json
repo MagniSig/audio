@@ -1,0 +1,11 @@
+{
+	"name": "common.audio",
+	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/commons/audio.git"
+	},
+	"main": ["./build/common.audio-min.js"],
+	"dependencies": {
+	}
+}
