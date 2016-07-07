@@ -6,6 +6,12 @@
 	"homepage" : "https://github.com/commons/audio",
 	"repository" : "http://github.com/commons/audio",
 	"license": "MIT",
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://www.makesites.org/licenses/MIT"
+		}
+	],
 	"engine" : {
 		"node" : ">=0.12.x"
 	},
