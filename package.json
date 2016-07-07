@@ -5,12 +5,7 @@
 	"description" : "Common methods usind the Web Audio API",
 	"homepage" : "https://github.com/commons/audio",
 	"repository" : "http://github.com/commons/audio",
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.makesites.org/licenses/MIT"
-		}
-	],
+	"license": "MIT",
 	"engine" : {
 		"node" : ">=0.12.x"
 	},
