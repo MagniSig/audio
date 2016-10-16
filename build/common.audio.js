@@ -2,7 +2,7 @@
  * @name common.audio
  * Common methods usind the Web Audio API
  *
- * Version: 0.1.0 (Thu, 07 Jul 2016 08:47:01 GMT)
+ * Version: 0.1.0 (Sun, 16 Oct 2016 07:36:10 GMT)
  * Source: http://github.com/commons/audio
  *
  * @author makesites
@@ -103,7 +103,7 @@ Audio.prototype.options = {};
 
 Audio.prototype.play = function( key ){
 	// prerequisites
-	if( !data[key] ) return utils.log('no audio loaded with the key:', key);
+	if( !data[key] ) return utils.log('no audio loaded with the key:'+ key);
 	if( !data[key].buffer ) return utils.log('audio has not loaded yet');
 	// get buffer
 	var source = context.createBufferSource();
@@ -164,7 +164,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
 			request.response,
 			function(buffer) {
 				if (!buffer) {
-					alert('error decoding file data: ' + url);
+					utils.log("error decoding file data: "+ url);
 					return;
 				}
 				loader.bufferList[index] = buffer;
@@ -172,7 +172,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
 					loader.onload(loader.bufferList);
 			},
 			function(error) {
-				console.error('decodeAudioData error', error);
+				utils.log("decodeAudioData error: "+ error);
 			}
 		);
 
@@ -182,7 +182,7 @@ BufferLoader.prototype.loadBuffer = function(url, index) {
 		//progressCallback( e.loaded * 100 / e.total );
 	};
 	request.onerror = function() {
-		alert('BufferLoader: XHR error');
+		utils.log('BufferLoader: XHR error');
 	};
 
 	request.send();
