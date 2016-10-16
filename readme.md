@@ -21,7 +21,7 @@ var audio = new CommonAudio();
 
 // pre-load files
 // Method #1
-audio.load({ 'key', '/path/to/file.mp3' }); // set a specific key for a file
+audio.load({ 'key': '/path/to/file.mp3' }); // set a specific key for a file
 
 //Method #2
 audio.load('/path/to/file.mp3'); // auto-set the key from the filename ( no extension )
