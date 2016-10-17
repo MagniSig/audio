@@ -2,7 +2,7 @@
  * @name common.audio
  * Common methods usind the Web Audio API
  *
- * Version: 0.1.0 (Sun, 16 Oct 2016 07:36:10 GMT)
+ * Version: 0.2.0 (Mon, 17 Oct 2016 06:26:03 GMT)
  * Source: http://github.com/commons/audio
  *
  * @author makesites
@@ -125,18 +125,31 @@ var Data = function( obj, callback ){
 	// save data now
 	data = utils.extend(data, this.collection);
 
-	return this.update.bind(this);
+	return this.update.bind(this); // used as a callback in BufferLoader
 };
 
 Data.prototype.update = function( bufferList ) {
 	// save buffer list
-	i = 0;
 	for( var key in this.collection ){
-		// assume the same order
-		data[key].buffer = bufferList[i];
-		i++;
+		var file = this.collection[key];
+		var index = this.toIndex(key);
+		// replace string value with object
+		data[key] = {
+			file: file,
+			buffer: bufferList[index]
+		};
 	}
 	// delete instance?
+};
+
+// find the order of a key
+Data.prototype.toIndex = function( key ) {
+	var index = 0;
+	for( var i in this.collection ){
+		if( i == key ) break;
+		index++;
+	}
+	return index;
 };
 
 
